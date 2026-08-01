@@ -252,8 +252,6 @@ const sheetURL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTItYAMnnZRrpDxva40rx1kMEoyUNCtXZ-ft3Tdv28aBZUjwtNscq69M9G05MYf2TJcr6CgJCvY2LQC/pub?gid=0&single=true&output=csv";
 
 
-const imagesURL =
-"https://script.google.com/macros/s/AKfycbySOHWCXFT5LMKwECpIL-_6sYcWmUggUcHeDrSPA4gBIPg7wWCBjyJnF9Om_Q6HHJhgEA/exec";
 
 
 
@@ -266,11 +264,6 @@ let csvResponse = await fetch(sheetURL);
 let csv = await csvResponse.text();
 
 
-let imagesResponse = await fetch(imagesURL);
-
-let images = await imagesResponse.json();
-
-console.log("IMAGES:", images);
 console.log("IMAGE 40:", images["40"]);
 let rows = csv.split(/\r?\n/);
 
@@ -307,7 +300,7 @@ location:values[4]?.trim(),
 
 department:values[5]?.trim(),
 
-image: images[String(id)] || "https://i.pravatar.cc/300"
+image: "emp.png"
 
 };
 
