@@ -270,7 +270,8 @@ let imagesResponse = await fetch(imagesURL);
 
 let images = await imagesResponse.json();
 
-
+console.log("IMAGES:", images);
+console.log("IMAGE 40:", images["40"]);
 let rows = csv.split(/\r?\n/);
 
 rows.shift();
@@ -284,7 +285,12 @@ employees = rows
 let values=row.split(",");
 
 
-let id = values[0]?.trim();
+let id = values[0]
+.replace(/"/g,'')
+.trim()
+.replace(".0","");
+
+console.log("EMP ID:", id);
 
 
 return {
@@ -301,7 +307,7 @@ location:values[4]?.trim(),
 
 department:values[5]?.trim(),
 
-image:images[id] || "https://i.pravatar.cc/300"
+image: images[String(id)] || "https://i.pravatar.cc/300"
 
 };
 
