@@ -4,224 +4,231 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>دليل هاتف الموظفين</title>
+<title>دليل هاتف موظفي دائرة الإفتاء العام</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 body{
-margin:0;
-background:#f3f4f6;
-font-family:'Cairo',sans-serif;
+    margin:0;
+    background:#f3f4f6;
+    font-family:'Cairo',sans-serif;
 }
 
 header{
-background:white;
-color:green;
-padding:18px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-}
-
-.search{
-padding:15px;
-}
-
-.search input{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid #ddd;
-font-size:16px;
-}
-
-.container{
-padding:15px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:15px;
-}
-
-.card{
-background:white;
-border-radius:18px;
-padding:20px;
-text-align:center;
-box-shadow:0 4px 12px #0002;
-}
-
-.card img{
-width:110px;
-height:110px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid #1d4ed8;
-}
-
-.name{
-font-size:20px;
-font-weight:bold;
-margin-top:10px;
-}
-
-.info{
-line-height:2;
-color:#555;
-margin-top:10px;
-}
-
-.phone{
-
-display:block;
-width:100%;
-background:#16a34a;
-color:white;
-padding:12px;
-border-radius:10px;
-margin-top:12px;
-border:none;
-font-size:16px;
-font-family:'Cairo',sans-serif;
-cursor:pointer;
-
+    background:#ffffff;
+    color:green;
+    padding:15px;
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
 }
 
 .logo{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+}
 
-width:80px;
-height:80px;
-object-fit:contain;
-display:block;
-margin:0 auto 10px auto;
+
+.search{
+    padding:12px;
+    position:sticky;
+    top:0;
+    background:#f3f4f6;
+    z-index:10;
+}
+
+.search input{
+
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    font-size:16px;
+    font-family:'Cairo',sans-serif;
 
 }
 
+
+.container{
+
+    padding:12px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:12px;
+
+}
+
+
+.card{
+
+    background:white;
+    border-radius:18px;
+    padding:16px;
+    text-align:center;
+    box-shadow:0 3px 10px #0002;
+
+}
+
+
+.card img{
+
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #1d4ed8;
+
+}
+
+
+.name{
+
+    font-size:19px;
+    font-weight:bold;
+    margin-top:8px;
+
+}
+
+
+.info{
+
+    line-height:1.9;
+    color:#555;
+    font-size:15px;
+
+}
+
+
+.phone{
+
+    width:100%;
+    background:#16a34a;
+    color:white;
+    padding:11px;
+    border-radius:10px;
+    border:0;
+    margin-top:10px;
+    font-size:16px;
+    font-family:'Cairo',sans-serif;
+
+}
+
+
+/* النافذة */
+
 .modal{
 
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#0008;
-z-index:1000;
-align-items:center;
-justify-content:center;
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#0008;
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
 
 }
 
 
 .modal-box{
 
-background:white;
-width:85%;
-max-width:350px;
-border-radius:25px;
-padding:25px;
-text-align:center;
-animation:show .3s;
-
-}
-
-
-@keyframes show{
-
-from{
-transform:scale(.7);
-opacity:0;
-}
-
-to{
-transform:scale(1);
-opacity:1;
-}
+    background:white;
+    width:85%;
+    max-width:350px;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
 
 }
 
 
 .modal-box img{
 
-width:100px;
-height:100px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid #1d4ed8;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #1d4ed8;
 
 }
 
 
 .modal-name{
 
-font-size:22px;
-font-weight:bold;
-margin:10px;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px;
 
 }
 
 
 .modal-phone{
 
-color:#666;
-font-size:18px;
-margin-bottom:20px;
+    color:#666;
+    font-size:18px;
+    margin-bottom:15px;
 
 }
 
 
 .action{
 
-display:flex;
-gap:10px;
+    display:flex;
+    gap:10px;
 
 }
 
 
 .action a{
 
-flex:1;
-padding:12px;
-border-radius:12px;
-color:white;
-text-decoration:none;
-font-size:16px;
+    flex:1;
+    padding:12px;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
 
 }
 
 
 .call{
 
-background:#2563eb;
+    background:#2563eb;
 
 }
 
 
 .whatsapp{
 
-background:#16a34a;
+    background:#16a34a;
 
 }
 
 
 .close{
 
-margin-top:15px;
-background:#eee;
-padding:10px;
-border-radius:12px;
-cursor:pointer;
+    margin-top:15px;
+    background:#eee;
+    padding:10px;
+    border-radius:12px;
 
 }
+
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -235,244 +242,16 @@ cursor:pointer;
 
 
 <div class="search">
-<input id="search" placeholder="ابحث عن موظف..." onkeyup="searchEmployee()">
+
+<input id="search"
+placeholder="ابحث عن موظف..."
+oninput="searchEmployee()">
+
 </div>
 
 
 <div class="container" id="cards"></div>
 
-
-
-
-<script>
-
-let employees = [];
-
-const sheetURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vTItYAMnnZRrpDxva40rx1kMEoyUNCtXZ-ft3Tdv28aBZUjwtNscq69M9G05MYf2TJcr6CgJCvY2LQC/pub?gid=0&single=true&output=csv";
-
-
-
-
-
-async function loadEmployees(){
-
-try{
-
-let csvResponse = await fetch(sheetURL);
-
-let csv = await csvResponse.text();
-
-
-
-let rows = csv.split(/\r?\n/);
-
-rows.shift();
-
-
-employees = rows
-.filter(row=>row.trim()!="")
-.map(row=>{
-
-
-let values=row.split(",");
-
-
-let id = values[0]
-.replace(/"/g,'')
-.trim()
-.replace(".0","");
-
-console.log("EMP ID:", id);
-
-
-return {
-
-id:id,
-
-name:values[1]?.trim(),
-
-phone:values[2]?.trim(),
-
-extension:values[3]?.trim(),
-
-location:values[4]?.trim(),
-
-department:values[5]?.trim(),
-
-image: "emp.png"
-
-};
-
-
-});
-
-
-display(employees);
-
-
-}
-
-catch(error){
-
-document.getElementById("cards").innerHTML=
-`
-<div class="card">
-<div class="name">خطأ في تحميل البيانات</div>
-<div class="info">${error}</div>
-</div>
-`;
-
-console.log(error);
-
-}
-
-}
-
-
-
-
-function display(list){
-
-let box=document.getElementById("cards");
-
-box.innerHTML="";
-
-
-list.forEach(emp=>{
-
-
-box.innerHTML +=`
-
-<div class="card">
-
-<img src="${emp.image}">
-
-<div class="name">
-${emp.name}
-</div>
-
-<div class="info">
-
-📍 ${emp.location}
-
-<br>
-
-🏢 ${emp.department}
-
-<br>
-
-☎ ${emp.extension}
-
-</div>
-
-
-<button class="phone" onclick="showContact('${emp.phone}','${emp.name}','${emp.image}')">
-
-☎ ${emp.phone}
-
-</button>
-
-</div>
-
-`;
-
-});
-
-
-}
-
-
-
-
-function searchEmployee(){
-
-let text=document
-.getElementById("search")
-.value
-.toLowerCase()
-.trim();
-
-
-
-let result=employees.filter(e=>
-
-(e.name && e.name.toLowerCase().includes(text))
-
-||
-
-(e.location && e.location.toLowerCase().includes(text))
-
-||
-
-(e.department && e.department.toLowerCase().includes(text))
-
-||
-
-(e.extension && e.extension.includes(text))
-
-||
-
-(e.phone && e.phone.includes(text))
-
-);
-
-
-
-display(result);
-
-}
-
-
-
-
-function showContact(phone,name,image){
-
-
-document.getElementById("modalImage").src=image;
-
-document.getElementById("modalName").innerHTML=name;
-
-document.getElementById("modalPhone").innerHTML=phone;
-
-
-document.getElementById("callBtn").href="tel:"+phone;
-
-
-let whatsappNumber=phone;
-
-if(phone.startsWith("0")){
-whatsappNumber=phone.substring(1);
-}
-
-
-document.getElementById("waBtn").href=
-"https://wa.me/962"+whatsappNumber;
-
-
-document.getElementById("contactModal").style.display="flex";
-
-
-}
-
-
-
-
-function closeModal(){
-
-document.getElementById("contactModal").style.display="none";
-
-}
-
-
-
-
-window.onload=function(){
-
-loadEmployees();
-
-};
-</script>
 
 <div class="modal" id="contactModal">
 
@@ -507,5 +286,338 @@ loadEmployees();
 </div>
 
 </div>
+<script>
+
+let employees = [];
+let searchIndex = [];
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTItYAMnnZRrpDxva40rx1kMEoyUNCtXZ-ft3Tdv28aBZUjwtNscq69M9G05MYf2TJcr6CgJCvY2LQC/pub?gid=0&single=true&output=csv";
+
+
+// تحميل البيانات
+
+async function loadEmployees(){
+
+    let cached = localStorage.getItem("employeesData");
+
+    if(cached){
+
+        employees = JSON.parse(cached);
+        createSearchIndex();
+        display(employees);
+    }
+
+
+    try{
+
+        let response = await fetch(sheetURL);
+
+        let csv = await response.text();
+
+        let rows = parseCSV(csv);
+
+        rows.shift();
+
+
+        employees = rows
+        .filter(r=>r.length>1)
+        .map(r=>{
+
+
+            return {
+
+                id:(r[0]||"").replace(".0","").trim(),
+
+                name:(r[1]||"").trim(),
+
+                phone:(r[2]||"").trim(),
+
+                extension:(r[3]||"").trim(),
+
+                location:(r[4]||"").trim(),
+
+                department:(r[5]||"").trim(),
+
+                image:"emp.png"
+
+            };
+
+
+        });
+
+
+        localStorage.setItem(
+            "employeesData",
+            JSON.stringify(employees)
+        );
+
+
+        createSearchIndex();
+
+        display(employees);
+
+
+    }
+
+    catch(e){
+
+        if(employees.length==0){
+
+            document.getElementById("cards").innerHTML=
+            `
+            <div class="card">
+            <div class="name">
+            خطأ في تحميل البيانات
+            </div>
+            </div>
+            `;
+
+        }
+
+        console.log(e);
+
+    }
+
+}
+
+
+
+// قراءة CSV بطريقة صحيحة
+
+function parseCSV(text){
+
+    let result=[];
+
+    let row=[];
+
+    let value="";
+
+    let inside=false;
+
+
+    for(let i=0;i<text.length;i++){
+
+        let c=text[i];
+
+
+        if(c=='"'){
+
+            inside=!inside;
+
+        }
+
+        else if(c==',' && !inside){
+
+            row.push(value);
+
+            value="";
+
+        }
+
+        else if((c=="\n" || c=="\r") && !inside){
+
+            if(value!=="" || row.length){
+
+                row.push(value);
+
+                result.push(row);
+
+                row=[];
+
+                value="";
+
+            }
+
+        }
+
+        else{
+
+            value+=c;
+
+        }
+
+    }
+
+
+    if(value || row.length){
+
+        row.push(value);
+
+        result.push(row);
+
+    }
+
+
+    return result;
+
+}
+
+
+
+// إنشاء فهرس بحث سريع
+
+function createSearchIndex(){
+
+    searchIndex = employees.map(emp=>({
+
+        employee:emp,
+
+        text:
+        (
+            emp.name+" "+
+            emp.phone+" "+
+            emp.extension+" "+
+            emp.location+" "+
+            emp.department
+        ).toLowerCase()
+
+    }));
+
+}
+
+
+
+// عرض الموظفين
+
+function display(list){
+
+    let box=document.getElementById("cards");
+
+    box.innerHTML="";
+
+
+    list.forEach(emp=>{
+
+
+        box.innerHTML +=`
+
+        <div class="card">
+
+        <img src="${emp.image}"
+        onerror="this.src='emp.png'">
+
+
+        <div class="name">
+        ${emp.name}
+        </div>
+
+
+        <div class="info">
+
+        📍 ${emp.location}
+
+        <br>
+
+        🏢 ${emp.department}
+
+        <br>
+
+        ☎ ${emp.extension}
+
+        </div>
+
+
+        <button class="phone"
+        onclick='showContact(${JSON.stringify(emp.phone)},${JSON.stringify(emp.name)},${JSON.stringify(emp.image)})'>
+
+        ☎ ${emp.phone}
+
+        </button>
+
+
+        </div>
+
+        `;
+
+
+    });
+
+}
+
+
+
+// البحث السريع
+
+function searchEmployee(){
+
+    let text=
+    document.getElementById("search")
+    .value
+    .trim()
+    .toLowerCase();
+
+
+    if(text===""){
+
+        display(employees);
+
+        return;
+
+    }
+
+
+    let result=
+    searchIndex
+    .filter(x=>x.text.includes(text))
+    .map(x=>x.employee);
+
+
+    display(result);
+
+}
+
+
+
+// نافذة الاتصال
+
+function showContact(phone,name,image){
+
+
+    document.getElementById("modalImage").src=image;
+
+    document.getElementById("modalName").innerHTML=name;
+
+    document.getElementById("modalPhone").innerHTML=phone;
+
+
+    document.getElementById("callBtn").href=
+    "tel:"+phone;
+
+
+
+    let number=phone.replace(/^0/,"");
+
+
+    document.getElementById("waBtn").href=
+    "https://wa.me/962"+number;
+
+
+    document.getElementById("contactModal")
+    .style.display="flex";
+
+
+}
+
+
+
+function closeModal(){
+
+    document.getElementById("contactModal")
+    .style.display="none";
+
+}
+
+
+
+window.onload=function(){
+
+    loadEmployees();
+
+};
+
+
+</script>
+
 </body>
 </html>
