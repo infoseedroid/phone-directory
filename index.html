@@ -815,8 +815,9 @@ ${new Date().toLocaleString("ar-JO")}
 
 
 
-openWhatsApp(msg);
+window.open(
 
+"https://wa.me/"+adminWhatsApp+"?text="+encodeURIComponent(msg)
 );
 
 
@@ -881,8 +882,9 @@ ${new Date().toLocaleString("ar-JO")}
 
 
 
-openWhatsApp(msg);
-
+window.open(
+"https://wa.me/"+adminWhatsApp+"?text="+encodeURIComponent(msg)
+);
 
 );
 
