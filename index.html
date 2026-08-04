@@ -815,9 +815,7 @@ ${new Date().toLocaleString("ar-JO")}
 
 
 
-window.open(
-
-"https://wa.me/"+adminWhatsApp+"?text="+encodeURIComponent(msg)
+openWhatsApp(msg);
 
 );
 
@@ -883,9 +881,8 @@ ${new Date().toLocaleString("ar-JO")}
 
 
 
-window.open(
+openWhatsApp(msg);
 
-"https://wa.me/"+adminWhatsApp+"?text="+encodeURIComponent(msg)
 
 );
 
@@ -988,7 +985,39 @@ window.onload=function(){
 loadEmployees();
 
 };
+function openWhatsApp(message){
 
+    let whatsappURL =
+    "whatsapp://send?phone=" 
+    + adminWhatsApp
+    + "&text="
+    + encodeURIComponent(message);
+
+
+    let webURL =
+    "https://wa.me/"
+    + adminWhatsApp
+    + "?text="
+    + encodeURIComponent(message);
+
+
+
+    // محاولة فتح تطبيق واتساب مباشرة
+
+    window.location.href = whatsappURL;
+
+
+
+    // احتياط إذا لم يفتح التطبيق
+
+    setTimeout(function(){
+
+        window.location.href = webURL;
+
+    },1500);
+
+
+}
 
 </script>
 
