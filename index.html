@@ -311,7 +311,7 @@ background:#777;
 
 
 
-/* نافذة الاتصال القديمة */
+/* نافذة الاتصال */
 
 
 .modal-box img{
@@ -339,12 +339,9 @@ background:#16a34a;
 }
 
 
-
 </style>
 
 </head>
-
-
 <body>
 
 
@@ -440,6 +437,11 @@ onclick="clearSearch()">
 <div class="container" id="cards">
 
 </div>
+
+
+
+
+
 <!-- نافذة طلب إضافة جهة اتصال -->
 
 <div class="modal" id="addModal">
@@ -559,14 +561,70 @@ onclick="closeEditRequest()">
 
 
 
+
+<!-- نافذة الاتصال الجديدة -->
+
+<div class="modal" id="contactModal">
+
+
+<div class="modal-box">
+
+
+<img id="contactImage" src="emp.png">
+
+
+<div class="modal-title" id="contactName"></div>
+
+
+
+<div class="modal-buttons">
+
+
+<button class="call"
+onclick="makeCall()">
+
+☎ اتصال
+
+</button>
+
+
+
+<button class="whatsapp"
+onclick="openWhatsApp()">
+
+💬 واتساب
+
+</button>
+
+
+</div>
+
+
+<br>
+
+
+<button class="close"
+style="width:100%;padding:12px;border:none;border-radius:12px;color:white;font-family:'Cairo'"
+onclick="closeContact()">
+
+إغلاق
+
+</button>
+
+
+</div>
+
+
+</div>
 <script>
 
 
 let employees=[];
 
-
 let currentEmployee=null;
 
+let selectedPhone="";
+let selectedName="";
 
 
 const adminWhatsApp="962796111656";
@@ -580,7 +638,6 @@ const sheetURL =
 
 
 // تحميل البيانات
-
 
 async function loadEmployees(){
 
@@ -735,6 +792,76 @@ onclick='openEditRequest(${JSON.stringify(emp)})'>
 
 
 
+
+// نافذة الاتصال
+
+
+function showContact(phone,name){
+
+
+selectedPhone=phone;
+
+selectedName=name;
+
+
+document.getElementById("contactName").innerHTML=name;
+
+
+document.getElementById("contactModal").style.display="flex";
+
+
+}
+
+
+
+function makeCall(){
+
+
+window.location.href="tel:"+selectedPhone;
+
+
+}
+
+
+
+function openWhatsApp(){
+
+
+let number=selectedPhone.replace(/^0/,"");
+
+
+if(number.startsWith("7")){
+
+number="962"+number;
+
+}
+
+
+window.open(
+
+"https://wa.me/"+number+
+"?text="+encodeURIComponent("السلام عليكم "+selectedName)
+
+);
+
+
+}
+
+
+
+function closeContact(){
+
+
+document.getElementById("contactModal").style.display="none";
+
+
+}
+
+
+
+
+
+
 // فتح طلب التعديل
 
 
@@ -767,7 +894,6 @@ document.getElementById("editModal").style.display="flex";
 
 
 }
-
 
 
 
@@ -962,20 +1088,6 @@ phone:"أدخل رقم الهاتف..."
 
 searchInput.placeholder=
 p[searchType.value];
-
-
-}
-
-
-
-
-// الاتصال
-
-
-function showContact(phone,name){
-
-
-window.location.href="tel:"+phone;
 
 
 }
