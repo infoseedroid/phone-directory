@@ -980,6 +980,29 @@ document.getElementById("addModal").style.display="none";
 function sendAddRequest(){
 
 
+if(
+addName.value.trim()=="" &&
+addPhone.value.trim()=="" &&
+addExtension.value.trim()=="" &&
+addLocation.value.trim()=="" &&
+addDepartment.value.trim()=="" &&
+addNotes.value.trim()==""
+){
+
+
+alert("لا يجوز إرسال بيانات فارغة عبر الواتساب");
+
+
+closeAddRequest();
+
+
+return;
+
+
+}
+
+
+
 let msg=
 `
 طلب إضافة جهة اتصال جديدة
