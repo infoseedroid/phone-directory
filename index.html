@@ -59,9 +59,9 @@ object-fit:contain;
 
 .spinner{
 
-margin-top:20px;
 width:45px;
 height:45px;
+margin-top:20px;
 border:5px solid #ddd;
 border-top:5px solid green;
 border-radius:50%;
@@ -74,7 +74,9 @@ animation:spin 1s linear infinite;
 @keyframes spin{
 
 100%{
+
 transform:rotate(360deg);
+
 }
 
 }
@@ -84,8 +86,8 @@ transform:rotate(360deg);
 .loading-text{
 
 margin-top:15px;
-font-weight:bold;
 font-size:18px;
+font-weight:bold;
 
 }
 
@@ -154,7 +156,6 @@ margin-bottom:10px;
 
 
 
-
 .main-buttons button{
 
 flex:1;
@@ -166,6 +167,77 @@ font-family:'Cairo',sans-serif;
 font-size:15px;
 
 }
+
+
+
+
+/* زر الخدمات */
+
+
+.service-menu{
+
+position:relative;
+flex:1;
+
+}
+
+
+
+.service-main-btn{
+
+width:100%;
+padding:12px;
+background:#16a34a;
+color:white;
+border:none;
+border-radius:12px;
+font-family:'Cairo',sans-serif;
+font-size:16px;
+font-weight:bold;
+
+}
+
+
+
+.service-dropdown{
+
+display:none;
+position:absolute;
+top:55px;
+right:0;
+left:0;
+background:white;
+border-radius:12px;
+box-shadow:0 4px 15px #0003;
+z-index:500;
+overflow:hidden;
+
+}
+
+
+
+.service-dropdown button{
+
+width:100%;
+padding:15px 18px;
+background:white;
+border:none;
+font-family:'Cairo',sans-serif;
+font-size:16px;
+font-weight:600;
+text-align:right;
+display:block;
+
+}
+
+
+
+.service-dropdown button:hover{
+
+background:#f1f5f9;
+
+}
+
 
 
 
@@ -205,75 +277,6 @@ background:#0891b2;
 
 
 
-/* قائمة خدمات الدليل */
-
-
-.service-menu{
-
-position:relative;
-flex:1;
-
-}
-
-
-
-.service-main-btn{
-
-width:100%;
-padding:12px;
-background:#16a34a;
-color:white;
-border:none;
-border-radius:12px;
-font-family:'Cairo',sans-serif;
-font-size:15px;
-
-}
-
-
-
-.service-dropdown{
-
-display:none;
-position:absolute;
-top:55px;
-right:0;
-left:0;
-background:white;
-border-radius:12px;
-box-shadow:0 4px 15px #0003;
-overflow:hidden;
-z-index:500;
-
-}
-
-
-
-.service-dropdown button{
-
-width:100%;
-padding:13px;
-background:white;
-border:none;
-font-family:'Cairo',sans-serif;
-font-size:15px;
-text-align:right;
-
-}
-
-
-
-.service-dropdown button:hover{
-
-background:#f3f4f6;
-
-}
-
-
-
-
-
-
 .counter{
 
 text-align:center;
@@ -281,6 +284,7 @@ font-weight:bold;
 padding:10px;
 
 }
+
 
 
 
@@ -296,6 +300,7 @@ font-weight:bold;
 box-shadow:0 3px 10px #0002;
 
 }
+
 
 
 
@@ -377,7 +382,6 @@ overflow:hidden;
 z-index:20;
 
 }
-
 
 
 
@@ -543,7 +547,8 @@ object-fit:cover;
 <body>
 
 
-<!-- شاشة التحميل -->
+
+
 
 <div id="loadingScreen">
 
@@ -567,10 +572,12 @@ object-fit:cover;
 
 
 
+
 <header>
 
 
 <img src="https://www.aliftaa.jo/images/newIftaLogoJpg_.jpg" class="logo">
+
 
 
 <div>
@@ -580,13 +587,17 @@ object-fit:cover;
 </div>
 
 
+
 </header>
 
 
 
 
 
+
 <div class="controls">
+
+
 
 
 
@@ -597,12 +608,13 @@ object-fit:cover;
 <div class="service-menu">
 
 
-
 <button class="service-main-btn"
 onclick="toggleServices()">
 
 
+
 ⚙️ خدمات الدليل ▼
+
 
 
 </button>
@@ -627,8 +639,7 @@ onclick="toggleServices()">
 
 
 
-
-<button onclick="openGeneralEditRequest()">
+<button onclick="openEmployeeSearchEdit()">
 
 
 
@@ -637,7 +648,6 @@ onclick="toggleServices()">
 
 
 </button>
-
 
 
 
@@ -682,13 +692,11 @@ onchange="changePlaceholder()">
 </option>
 
 
-
 <option value="department">
 
 المسمى الوظيفي
 
 </option>
-
 
 
 <option value="location">
@@ -698,13 +706,11 @@ onchange="changePlaceholder()">
 </option>
 
 
-
 <option value="extension">
 
 الرقم الفرعي
 
 </option>
-
 
 
 <option value="phone">
@@ -716,6 +722,7 @@ onchange="changePlaceholder()">
 
 
 </select>
+
 
 
 
@@ -763,8 +770,8 @@ onclick="clearSearch()">
 
 
 
-
 </div>
+
 
 
 
@@ -776,6 +783,7 @@ onclick="clearSearch()">
 
 
 <div id="messageBox" class="message-box"></div>
+
 
 
 
@@ -798,6 +806,7 @@ onclick="clearSearch()">
 
 
 
+
 <!-- نافذة طلب إضافة -->
 
 <div class="modal" id="addModal">
@@ -811,6 +820,7 @@ onclick="clearSearch()">
 ➕ طلب إضافة جهة اتصال
 
 </div>
+
 
 
 
@@ -834,6 +844,7 @@ onclick="clearSearch()">
 
 
 
+
 <div class="modal-buttons">
 
 
@@ -848,7 +859,6 @@ onclick="sendAddRequest()">
 
 
 </button>
-
 
 
 
@@ -879,12 +889,84 @@ onclick="closeAddRequest()">
 
 
 
+
+<!-- نافذة البحث بالرقم الوظيفي -->
+
+
+<div class="modal" id="employeeSearchModal">
+
+
+<div class="modal-box">
+
+
+
+<div class="modal-title">
+
+✏️ تعديل بيانات موظف
+
+</div>
+
+
+
+
+<input id="employeeIdSearch"
+placeholder="أدخل الرقم الوظيفي">
+
+
+
+
+
+<div class="modal-buttons">
+
+
+<button class="send"
+onclick="findEmployeeById()">
+
+
+
+بحث
+
+
+
+</button>
+
+
+
+<button class="close"
+onclick="closeEmployeeSearch()">
+
+
+
+إغلاق
+
+
+
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
 <!-- نافذة تعديل البيانات -->
+
 
 <div class="modal" id="editModal">
 
 
 <div class="modal-box">
+
 
 
 <div class="modal-title">
@@ -893,6 +975,10 @@ onclick="closeAddRequest()">
 
 </div>
 
+
+
+
+<input id="editEmployeeId" readonly>
 
 
 <input id="editName" readonly>
@@ -934,7 +1020,6 @@ onclick="sendEditRequest()">
 
 
 
-
 <button class="close"
 onclick="closeEditRequest()">
 
@@ -956,7 +1041,6 @@ onclick="closeEditRequest()">
 
 
 </div>
-
 
 
 
@@ -1009,7 +1093,6 @@ onclick="openWhatsApp()">
 
 
 
-
 </div>
 
 
@@ -1033,11 +1116,13 @@ onclick="closeContact()">
 
 
 
-
 </div>
 
 
 </div>
+
+
+
 
 
 
@@ -1046,11 +1131,15 @@ onclick="closeContact()">
 
 let employees=[];
 
+
 let currentEmployee=null;
+
 
 let selectedPhone="";
 
+
 let selectedName="";
+
 
 let selectedImage="emp.png";
 
@@ -1062,6 +1151,10 @@ const adminWhatsApp="962796111656";
 
 const sheetURL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTItYAMnnZRrpDxva40rx1kMEoyUNCtXZ-ft3Tdv28aBZUjwtNscq69M9G05MYf2TJcr6CgJCvY2LQC/pub?gid=0&single=true&output=csv";
+
+
+
+
 
 
 
@@ -1088,12 +1181,17 @@ box.style.display="none";
 
 
 
-// تحميل البيانات
+
+
+
+
 
 async function loadEmployees(){
 
 
+
 try{
+
 
 
 let response=await fetch(sheetURL);
@@ -1121,9 +1219,13 @@ rows.shift();
 
 
 
+
 employees=rows
-.filter(row=>row.trim()!="")
+
+.filter(x=>x.trim()!="")
+
 .map(row=>{
+
 
 
 let v=row.split(",");
@@ -1133,17 +1235,27 @@ let v=row.split(",");
 return {
 
 
+
+employeeId:v[0] || "",
+
+
 name:v[1] || "",
+
 
 phone:v[2] || "",
 
+
 extension:v[3] || "",
+
 
 location:v[4] || "",
 
+
 department:v[5] || "",
 
+
 image:"emp.png"
+
 
 
 };
@@ -1155,8 +1267,8 @@ image:"emp.png"
 
 
 
-restoreLastSearch();
 
+displayEmployees(employees);
 
 
 hideLoading();
@@ -1164,6 +1276,8 @@ hideLoading();
 
 
 }
+
+
 
 catch(e){
 
@@ -1172,14 +1286,19 @@ hideLoading();
 
 
 showMessage(
+
 "⚠️ تعذر الاتصال ببيانات دليل الهاتف"
+
 );
 
 
 }
 
 
+
 }
+
+
 
 
 
@@ -1199,10 +1318,7 @@ document.getElementById("loadingScreen")
 
 
 
-// تحديث البيانات
-
-
-async function refreshData(){
+function refreshData(){
 
 
 
@@ -1212,11 +1328,12 @@ document.getElementById("loadingScreen")
 
 
 document.querySelector(".loading-text").innerHTML=
+
 "جاري تحديث البيانات...";
 
 
 
-await loadEmployees();
+loadEmployees();
 
 
 
@@ -1225,10 +1342,6 @@ await loadEmployees();
 
 
 
-
-
-
-// عرض الموظفين
 
 
 function displayEmployees(list){
@@ -1255,16 +1368,15 @@ if(list.length===0){
 
 
 showMessage(
-"❌ لا توجد نتائج مطابقة للبحث"
+
+"❌ لا توجد نتائج"
+
 );
 
 
 return;
 
-
 }
-
-
 
 
 
@@ -1279,6 +1391,7 @@ list.forEach(emp=>{
 html+=`
 
 
+
 <div class="card">
 
 
@@ -1288,10 +1401,13 @@ html+=`
 <div class="card-menu">
 
 
+
 <button class="card-menu-btn"
 onclick="toggleCardMenu(this)">
 
+
 ⋮
+
 
 </button>
 
@@ -1305,17 +1421,20 @@ onclick="toggleCardMenu(this)">
 
 <button onclick='openEditRequest(${JSON.stringify(emp)})'>
 
+
 ✏️ تعديل البيانات
 
-</button>
 
+</button>
 
 
 
 
 <button onclick='showContact(${JSON.stringify(emp)})'>
 
+
 ☎ اتصال / واتساب
+
 
 </button>
 
@@ -1324,9 +1443,8 @@ onclick="toggleCardMenu(this)">
 </div>
 
 
+
 </div>
-
-
 
 
 
@@ -1352,6 +1470,12 @@ ${escapeHTML(emp.name)}
 <div class="info">
 
 
+
+🆔 ${escapeHTML(emp.employeeId)}
+
+<br>
+
+
 📍 ${escapeHTML(emp.location)}
 
 <br>
@@ -1365,6 +1489,7 @@ ${escapeHTML(emp.name)}
 ☎ ${escapeHTML(emp.extension)}
 
 
+
 </div>
 
 
@@ -1375,14 +1500,10 @@ ${escapeHTML(emp.name)}
 onclick='showContact(${JSON.stringify(emp)})'>
 
 
-
 ☎ ${escapeHTML(emp.phone)}
 
 
-
 </button>
-
-
 
 
 
@@ -1400,10 +1521,7 @@ onclick='showContact(${JSON.stringify(emp)})'>
 box.innerHTML=html;
 
 
-
 }
-
-
 
 
 
@@ -1434,78 +1552,17 @@ return String(text)
 
 
 
-// البحث
-
-
 function searchEmployee(){
 
 
-
-let btn=document.getElementById("searchButton");
-
+let text=searchInput.value.toLowerCase().trim();
 
 
-btn.innerHTML="⏳ جاري البحث...";
+let type=searchType.value;
 
 
 
-btn.classList.add("loading");
-
-
-
-
-setTimeout(()=>{
-
-
-
-let text=
-searchInput.value
-.toLowerCase()
-.trim();
-
-
-
-let type=
-searchType.value;
-
-
-
-
-
-localStorage.setItem(
-
-"lastSearch",
-
-JSON.stringify({
-
-type:type,
-
-text:text
-
-})
-
-);
-
-
-
-
-
-let result;
-
-
-
-if(text===""){
-
-
-result=employees;
-
-
-}
-
-else{
-
-
-result=employees.filter(e=>
+let result=employees.filter(e=>
 
 
 (e[type]||"")
@@ -1518,29 +1575,12 @@ result=employees.filter(e=>
 );
 
 
-}
-
-
-
 
 displayEmployees(result);
 
 
 
-
-btn.innerHTML="🔍 بحث";
-
-
-btn.classList.remove("loading");
-
-
-
-},100);
-
-
-
 }
-
 
 
 
@@ -1553,79 +1593,11 @@ function clearSearch(){
 searchInput.value="";
 
 
-localStorage.removeItem("lastSearch");
-
-
 displayEmployees(employees);
 
 
 }
 
-
-
-
-
-
-function restoreLastSearch(){
-
-
-
-let saved=
-localStorage.getItem("lastSearch");
-
-
-
-if(saved){
-
-
-
-let data=JSON.parse(saved);
-
-
-
-searchType.value=data.type;
-
-
-searchInput.value=data.text;
-
-
-
-
-let result=employees.filter(e=>
-
-
-(e[data.type]||"")
-
-.toLowerCase()
-
-.includes(
-
-data.text.toLowerCase()
-
-)
-
-
-);
-
-
-
-displayEmployees(result);
-
-
-
-}
-
-else{
-
-
-displayEmployees(employees);
-
-
-}
-
-
-
-}
 
 
 
@@ -1653,15 +1625,14 @@ extension:"أدخل الرقم الفرعي...",
 
 phone:"أدخل رقم الهاتف..."
 
-
 };
-
 
 
 searchInput.placeholder=p[searchType.value];
 
 
 }
+
 
 
 // فتح قائمة الخدمات
@@ -1690,7 +1661,117 @@ menu.style.display==="block"
 
 
 
-// فتح قائمة خيارات الكارد
+// فتح نافذة البحث عن الموظف للتعديل
+
+function openEmployeeSearchEdit(){
+
+
+
+document.getElementById("serviceDropdown")
+.style.display="none";
+
+
+
+document.getElementById("employeeIdSearch")
+.value="";
+
+
+
+document.getElementById("employeeSearchModal")
+.style.display="flex";
+
+
+}
+
+
+
+
+
+function closeEmployeeSearch(){
+
+
+document.getElementById("employeeSearchModal")
+.style.display="none";
+
+
+}
+
+
+
+
+
+// البحث بالرقم الوظيفي
+
+
+function findEmployeeById(){
+
+
+
+let id=
+
+document.getElementById("employeeIdSearch")
+.value.trim();
+
+
+
+
+if(id===""){
+
+
+showMessage("⚠️ أدخل الرقم الوظيفي");
+
+
+return;
+
+
+}
+
+
+
+
+let emp=employees.find(e=>
+
+e.employeeId===id
+
+);
+
+
+
+
+if(!emp){
+
+
+showMessage(
+"❌ لم يتم العثور على موظف بهذا الرقم الوظيفي"
+);
+
+
+return;
+
+
+}
+
+
+
+
+closeEmployeeSearch();
+
+
+
+openEditRequest(emp);
+
+
+
+}
+
+
+
+
+
+
+
+// قائمة الكارد
+
 
 function toggleCardMenu(btn){
 
@@ -1715,13 +1796,13 @@ x.style.display="none";
 
 
 
-menu.style.display =
+menu.style.display=
 
 menu.style.display==="block"
 
-? "none"
+?"block"
 
-: "block";
+:"block";
 
 
 }
@@ -1731,11 +1812,20 @@ menu.style.display==="block"
 
 
 
-
-// إغلاق القوائم عند الضغط خارجها
-
-
 document.addEventListener("click",function(e){
+
+
+if(!e.target.closest(".card-menu")){
+
+
+document.querySelectorAll(".card-actions")
+.forEach(x=>{
+
+x.style.display="none";
+
+});
+
+}
 
 
 
@@ -1751,110 +1841,11 @@ menu.style.display="none";
 
 }
 
-
 }
-
-
-
-
-if(!e.target.closest(".card-menu")){
-
-
-document.querySelectorAll(".card-actions")
-.forEach(x=>{
-
-x.style.display="none";
-
-});
-
-
-}
-
 
 
 });
 
-
-
-
-
-
-
-
-
-// تعديل البيانات من قائمة الخدمات
-
-
-function openGeneralEditRequest(){
-
-
-
-document.getElementById("serviceDropdown")
-.style.display="none";
-
-
-
-let box=document.getElementById("cards");
-
-
-
-if(employees.length===0){
-
-showMessage(
-"لا توجد بيانات موظفين"
-);
-
-return;
-
-}
-
-
-
-
-let name=prompt(
-"اكتب اسم الموظف المطلوب تعديل بياناته:"
-);
-
-
-
-if(!name || name.trim()===""){
-
-return;
-
-}
-
-
-
-
-
-let emp=employees.find(e=>
-
-e.name.includes(name.trim())
-
-);
-
-
-
-if(!emp){
-
-
-showMessage(
-"❌ لم يتم العثور على الموظف"
-);
-
-
-return;
-
-
-}
-
-
-
-openEditRequest(emp);
-
-
-
-}
 
 
 
@@ -1870,7 +1861,6 @@ openEditRequest(emp);
 function showContact(emp){
 
 
-
 selectedPhone=emp.phone;
 
 
@@ -1881,17 +1871,13 @@ selectedImage=emp.image || "emp.png";
 
 
 
-
 document.getElementById("contactName").innerHTML=
-
 escapeHTML(emp.name);
 
 
 
 document.getElementById("contactImage").src=
-
 selectedImage;
-
 
 
 
@@ -1899,8 +1885,8 @@ document.getElementById("contactModal")
 .style.display="flex";
 
 
-
 }
+
 
 
 
@@ -1913,7 +1899,6 @@ window.location.href="tel:"+selectedPhone;
 
 
 }
-
 
 
 
@@ -1955,8 +1940,6 @@ window.open(
 
 
 
-
-
 function closeContact(){
 
 
@@ -1974,7 +1957,7 @@ document.getElementById("contactModal")
 
 
 
-// طلب تعديل البيانات
+// فتح تعديل البيانات
 
 
 function openEditRequest(emp){
@@ -1983,6 +1966,9 @@ function openEditRequest(emp){
 
 currentEmployee=emp;
 
+
+
+editEmployeeId.value=emp.employeeId;
 
 
 editName.value=emp.name;
@@ -2004,14 +1990,11 @@ editNotes.value="";
 
 
 
-
 document.getElementById("editModal")
 .style.display="flex";
 
 
 }
-
-
 
 
 
@@ -2039,6 +2022,9 @@ let msg=
 
 `
 طلب تعديل بيانات موظف
+
+الرقم الوظيفي:
+${editEmployeeId.value}
 
 الاسم:
 ${editName.value}
@@ -2085,7 +2071,7 @@ window.open(
 
 
 
-// طلب إضافة جهة اتصال
+// إضافة جهة اتصال
 
 
 function openAddRequest(){
@@ -2099,7 +2085,6 @@ document.getElementById("serviceDropdown")
 
 document.getElementById("addModal")
 .style.display="flex";
-
 
 
 }
@@ -2124,36 +2109,6 @@ document.getElementById("addModal")
 
 
 function sendAddRequest(){
-
-
-
-if(
-
-addName.value.trim()=="" &&
-
-addPhone.value.trim()=="" &&
-
-addExtension.value.trim()=="" &&
-
-addLocation.value.trim()=="" &&
-
-addDepartment.value.trim()=="" &&
-
-addNotes.value.trim()==""
-
-){
-
-
-
-alert("لا يجوز إرسال بيانات فارغة عبر الواتساب");
-
-
-return;
-
-
-}
-
-
 
 
 
@@ -2208,16 +2163,13 @@ window.open(
 
 
 
-
 // تشغيل الصفحة
 
 
 window.onload=function(){
 
 
-
 loadEmployees();
-
 
 
 };
