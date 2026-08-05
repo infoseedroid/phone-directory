@@ -40,10 +40,11 @@ background:white;
 z-index:9999;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 
 }
+
 
 
 #loadingScreen img{
@@ -53,6 +54,7 @@ height:90px;
 object-fit:contain;
 
 }
+
 
 
 .spinner{
@@ -68,6 +70,7 @@ animation:spin 1s linear infinite;
 }
 
 
+
 @keyframes spin{
 
 100%{
@@ -77,13 +80,15 @@ transform:rotate(360deg);
 }
 
 
+
 .loading-text{
 
 margin-top:15px;
-font-size:18px;
 font-weight:bold;
+font-size:18px;
 
 }
+
 
 
 
@@ -114,12 +119,12 @@ margin:auto;
 
 
 
+
 .controls{
 
 padding:12px;
 
 }
-
 
 
 
@@ -150,7 +155,6 @@ margin-bottom:10px;
 
 
 
-
 .main-buttons button{
 
 flex:1;
@@ -166,7 +170,6 @@ font-size:15px;
 
 
 
-
 .search-btn{
 
 background:#2563eb;
@@ -178,11 +181,9 @@ background:#2563eb;
 .search-btn.loading{
 
 opacity:.7;
-
 pointer-events:none;
 
 }
-
 
 
 
@@ -194,23 +195,11 @@ background:#777;
 
 
 
-
 .refresh-btn{
 
 background:#0891b2;
 
 }
-
-
-
-
-
-.add-btn{
-
-background:#16a34a;
-
-}
-
 
 
 
@@ -253,8 +242,8 @@ left:0;
 background:white;
 border-radius:12px;
 box-shadow:0 4px 15px #0003;
-z-index:500;
 overflow:hidden;
+z-index:500;
 
 }
 
@@ -263,14 +252,23 @@ overflow:hidden;
 .service-dropdown button{
 
 width:100%;
-padding:12px;
-border:none;
+padding:13px;
 background:white;
+border:none;
 font-family:'Cairo',sans-serif;
 font-size:15px;
 text-align:right;
 
 }
+
+
+
+.service-dropdown button:hover{
+
+background:#f3f4f6;
+
+}
+
 
 
 
@@ -283,7 +281,6 @@ font-weight:bold;
 padding:10px;
 
 }
-
 
 
 
@@ -303,15 +300,11 @@ box-shadow:0 3px 10px #0002;
 
 
 
-
 .container{
 
 padding:12px;
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
 gap:12px;
 
 }
@@ -356,7 +349,6 @@ right:10px;
 
 
 
-
 .card-menu-btn{
 
 background:#777;
@@ -368,7 +360,6 @@ height:35px;
 font-size:22px;
 
 }
-
 
 
 
@@ -390,20 +381,16 @@ z-index:20;
 
 
 
-
 .card-actions button{
 
 width:160px;
 padding:10px;
-border:none;
 background:white;
+border:none;
 font-family:'Cairo',sans-serif;
 text-align:right;
 
 }
-
-
-
 
 
 
@@ -443,6 +430,8 @@ font-family:'Cairo',sans-serif;
 
 
 
+/* النوافذ */
+
 .modal{
 
 display:none;
@@ -454,7 +443,6 @@ align-items:center;
 justify-content:center;
 
 }
-
 
 
 
@@ -504,11 +492,13 @@ font-family:'Cairo',sans-serif;
 }
 
 
+
 .send{
 
 background:#16a34a;
 
 }
+
 
 
 .close{
@@ -518,11 +508,13 @@ background:#777;
 }
 
 
+
 .call{
 
 background:#2563eb;
 
 }
+
 
 
 .whatsapp{
@@ -543,10 +535,10 @@ object-fit:cover;
 }
 
 
-
 </style>
 
 </head>
+
 
 <body>
 
@@ -555,27 +547,41 @@ object-fit:cover;
 
 <div id="loadingScreen">
 
+
 <img src="https://www.aliftaa.jo/images/newIftaLogoJpg_.jpg">
+
 
 <div class="spinner"></div>
 
+
 <div class="loading-text">
+
 جاري تحميل دليل الهاتف...
-</div>
 
 </div>
+
+
+</div>
+
+
 
 
 
 <header>
 
+
 <img src="https://www.aliftaa.jo/images/newIftaLogoJpg_.jpg" class="logo">
 
+
 <div>
+
 📞 دليل هاتف موظفي دائرة الإفتاء العام
+
 </div>
 
+
 </header>
+
 
 
 
@@ -591,29 +597,55 @@ object-fit:cover;
 <div class="service-menu">
 
 
+
 <button class="service-main-btn"
 onclick="toggleServices()">
 
+
 ⚙️ خدمات الدليل ▼
 
+
 </button>
+
 
 
 
 <div class="service-dropdown" id="serviceDropdown">
 
 
+
 <button onclick="openAddRequest()">
 
+
+
 ➕ طلب إضافة جهة اتصال
+
+
 
 </button>
 
 
+
+
+
+<button onclick="openGeneralEditRequest()">
+
+
+
+✏️ طلب تعديل بيانات
+
+
+
+</button>
+
+
+
+
 </div>
 
 
 </div>
+
 
 
 
@@ -621,13 +653,18 @@ onclick="toggleServices()">
 <button class="refresh-btn"
 onclick="refreshData()">
 
+
+
 🔄 تحديث
+
+
 
 </button>
 
 
 
 </div>
+
 
 
 
@@ -639,27 +676,41 @@ onchange="changePlaceholder()">
 
 
 <option value="name">
+
 الاسم
+
 </option>
+
 
 
 <option value="department">
+
 المسمى الوظيفي
+
 </option>
+
 
 
 <option value="location">
+
 موقع العمل
+
 </option>
+
 
 
 <option value="extension">
+
 الرقم الفرعي
+
 </option>
 
 
+
 <option value="phone">
+
 رقم الهاتف
+
 </option>
 
 
@@ -678,6 +729,7 @@ onkeydown="if(event.key==='Enter')searchEmployee()">
 
 
 
+
 <div class="main-buttons">
 
 
@@ -686,9 +738,14 @@ onkeydown="if(event.key==='Enter')searchEmployee()">
 class="search-btn"
 onclick="searchEmployee()">
 
+
+
 🔍 بحث
 
+
+
 </button>
+
 
 
 
@@ -696,17 +753,23 @@ onclick="searchEmployee()">
 <button class="clear-btn"
 onclick="clearSearch()">
 
+
+
 ✖ مسح
+
+
 
 </button>
 
 
 
-</div>
-
-
 
 </div>
+
+
+
+</div>
+
 
 
 
@@ -726,11 +789,10 @@ onclick="clearSearch()">
 
 
 
+
 <div class="container" id="cards">
 
 </div>
-
-
 
 
 
@@ -749,7 +811,6 @@ onclick="clearSearch()">
 ➕ طلب إضافة جهة اتصال
 
 </div>
-
 
 
 
@@ -776,19 +837,30 @@ onclick="clearSearch()">
 <div class="modal-buttons">
 
 
+
 <button class="send"
 onclick="sendAddRequest()">
 
+
+
 إرسال واتساب
 
+
+
 </button>
+
+
 
 
 
 <button class="close"
 onclick="closeAddRequest()">
 
+
+
 إغلاق
+
+
 
 </button>
 
@@ -807,9 +879,7 @@ onclick="closeAddRequest()">
 
 
 
-
-<!-- نافذة طلب تعديل -->
-
+<!-- نافذة تعديل البيانات -->
 
 <div class="modal" id="editModal">
 
@@ -822,7 +892,6 @@ onclick="closeAddRequest()">
 ✏️ طلب تعديل بيانات
 
 </div>
-
 
 
 
@@ -854,9 +923,14 @@ onclick="closeAddRequest()">
 <button class="send"
 onclick="sendEditRequest()">
 
+
+
 إرسال واتساب
 
+
+
 </button>
+
 
 
 
@@ -864,7 +938,11 @@ onclick="sendEditRequest()">
 <button class="close"
 onclick="closeEditRequest()">
 
+
+
 إغلاق
+
+
 
 </button>
 
@@ -883,9 +961,7 @@ onclick="closeEditRequest()">
 
 
 
-
 <!-- نافذة الاتصال -->
-
 
 <div class="modal" id="contactModal">
 
@@ -905,10 +981,15 @@ onclick="closeEditRequest()">
 <div class="modal-buttons">
 
 
+
 <button class="call"
 onclick="makeCall()">
 
+
+
 ☎ اتصال
+
+
 
 </button>
 
@@ -918,13 +999,18 @@ onclick="makeCall()">
 <button class="whatsapp"
 onclick="openWhatsApp()">
 
+
+
 💬 واتساب
+
+
 
 </button>
 
 
-</div>
 
+
+</div>
 
 
 
@@ -932,11 +1018,16 @@ onclick="openWhatsApp()">
 <br>
 
 
+
 <button class="close"
 style="width:100%;padding:12px;border:none;border-radius:12px;color:white;font-family:'Cairo'"
 onclick="closeContact()">
 
+
+
 إغلاق
+
+
 
 </button>
 
@@ -947,8 +1038,6 @@ onclick="closeContact()">
 
 
 </div>
-
-
 
 
 
@@ -964,6 +1053,7 @@ let selectedPhone="";
 let selectedName="";
 
 let selectedImage="emp.png";
+
 
 
 const adminWhatsApp="962796111656";
@@ -995,7 +1085,6 @@ box.style.display="none";
 
 
 }
-
 
 
 
@@ -1096,8 +1185,6 @@ showMessage(
 
 
 
-// إخفاء شاشة التحميل
-
 function hideLoading(){
 
 
@@ -1111,13 +1198,17 @@ document.getElementById("loadingScreen")
 
 
 
+
 // تحديث البيانات
+
 
 async function refreshData(){
 
 
+
 document.getElementById("loadingScreen")
 .style.display="flex";
+
 
 
 document.querySelector(".loading-text").innerHTML=
@@ -1130,6 +1221,8 @@ await loadEmployees();
 
 
 }
+
+
 
 
 
@@ -1157,8 +1250,8 @@ document.getElementById("counter").innerHTML=
 
 
 
-if(list.length===0){
 
+if(list.length===0){
 
 
 showMessage(
@@ -1179,9 +1272,8 @@ let html="";
 
 
 
-
-
 list.forEach(emp=>{
+
 
 
 html+=`
@@ -1205,6 +1297,8 @@ onclick="toggleCardMenu(this)">
 
 
 
+
+
 <div class="card-actions">
 
 
@@ -1214,6 +1308,7 @@ onclick="toggleCardMenu(this)">
 ✏️ تعديل البيانات
 
 </button>
+
 
 
 
@@ -1229,8 +1324,8 @@ onclick="toggleCardMenu(this)">
 </div>
 
 
-
 </div>
+
 
 
 
@@ -1276,12 +1371,13 @@ ${escapeHTML(emp.name)}
 
 
 
-
 <button class="phone"
 onclick='showContact(${JSON.stringify(emp)})'>
 
 
+
 ☎ ${escapeHTML(emp.phone)}
+
 
 
 </button>
@@ -1301,7 +1397,6 @@ onclick='showContact(${JSON.stringify(emp)})'>
 
 
 
-
 box.innerHTML=html;
 
 
@@ -1313,7 +1408,6 @@ box.innerHTML=html;
 
 
 
-// حماية النصوص
 
 function escapeHTML(text){
 
@@ -1338,7 +1432,10 @@ return String(text)
 
 
 
+
+
 // البحث
+
 
 function searchEmployee(){
 
@@ -1349,6 +1446,7 @@ let btn=document.getElementById("searchButton");
 
 
 btn.innerHTML="⏳ جاري البحث...";
+
 
 
 btn.classList.add("loading");
@@ -1373,8 +1471,11 @@ searchType.value;
 
 
 
+
 localStorage.setItem(
+
 "lastSearch",
+
 JSON.stringify({
 
 type:type,
@@ -1406,11 +1507,13 @@ else{
 
 result=employees.filter(e=>
 
+
 (e[type]||"")
 
 .toLowerCase()
 
 .includes(text)
+
 
 );
 
@@ -1424,7 +1527,9 @@ displayEmployees(result);
 
 
 
+
 btn.innerHTML="🔍 بحث";
+
 
 btn.classList.remove("loading");
 
@@ -1434,9 +1539,9 @@ btn.classList.remove("loading");
 
 
 
-
-
 }
+
+
 
 
 
@@ -1455,6 +1560,7 @@ displayEmployees(employees);
 
 
 }
+
 
 
 
@@ -1484,15 +1590,20 @@ searchInput.value=data.text;
 
 
 
+
 let result=employees.filter(e=>
+
 
 (e[data.type]||"")
 
 .toLowerCase()
 
 .includes(
+
 data.text.toLowerCase()
+
 )
+
 
 );
 
@@ -1515,6 +1626,7 @@ displayEmployees(employees);
 
 
 }
+
 
 
 
@@ -1552,7 +1664,7 @@ searchInput.placeholder=p[searchType.value];
 }
 
 
-// قائمة الخدمات
+// فتح قائمة الخدمات
 
 function toggleServices(){
 
@@ -1560,9 +1672,13 @@ function toggleServices(){
 let menu=document.getElementById("serviceDropdown");
 
 
+
 menu.style.display =
+
 menu.style.display==="block"
+
 ? "none"
+
 : "block";
 
 
@@ -1571,9 +1687,13 @@ menu.style.display==="block"
 
 
 
-// قائمة خيارات الكارد
+
+
+
+// فتح قائمة خيارات الكارد
 
 function toggleCardMenu(btn){
+
 
 
 let menu=btn.nextElementSibling;
@@ -1583,19 +1703,24 @@ let menu=btn.nextElementSibling;
 document.querySelectorAll(".card-actions")
 .forEach(x=>{
 
+
 if(x!==menu){
 
 x.style.display="none";
 
 }
 
+
 });
 
 
 
 menu.style.display =
+
 menu.style.display==="block"
+
 ? "none"
+
 : "block";
 
 
@@ -1603,6 +1728,11 @@ menu.style.display==="block"
 
 
 
+
+
+
+
+// إغلاق القوائم عند الضغط خارجها
 
 
 document.addEventListener("click",function(e){
@@ -1621,8 +1751,8 @@ menu.style.display="none";
 
 }
 
-}
 
+}
 
 
 
@@ -1637,11 +1767,97 @@ x.style.display="none";
 
 });
 
+
 }
 
 
 
 });
+
+
+
+
+
+
+
+
+
+// تعديل البيانات من قائمة الخدمات
+
+
+function openGeneralEditRequest(){
+
+
+
+document.getElementById("serviceDropdown")
+.style.display="none";
+
+
+
+let box=document.getElementById("cards");
+
+
+
+if(employees.length===0){
+
+showMessage(
+"لا توجد بيانات موظفين"
+);
+
+return;
+
+}
+
+
+
+
+let name=prompt(
+"اكتب اسم الموظف المطلوب تعديل بياناته:"
+);
+
+
+
+if(!name || name.trim()===""){
+
+return;
+
+}
+
+
+
+
+
+let emp=employees.find(e=>
+
+e.name.includes(name.trim())
+
+);
+
+
+
+if(!emp){
+
+
+showMessage(
+"❌ لم يتم العثور على الموظف"
+);
+
+
+return;
+
+
+}
+
+
+
+openEditRequest(emp);
+
+
+
+}
+
+
+
 
 
 
@@ -1657,24 +1873,31 @@ function showContact(emp){
 
 selectedPhone=emp.phone;
 
+
 selectedName=emp.name;
+
 
 selectedImage=emp.image || "emp.png";
 
 
 
+
 document.getElementById("contactName").innerHTML=
+
 escapeHTML(emp.name);
 
 
 
 document.getElementById("contactImage").src=
+
 selectedImage;
+
 
 
 
 document.getElementById("contactModal")
 .style.display="flex";
+
 
 
 }
@@ -1695,7 +1918,9 @@ window.location.href="tel:"+selectedPhone;
 
 
 
+
 function openWhatsApp(){
+
 
 
 let number=selectedPhone.replace(/^0/,"");
@@ -1723,7 +1948,10 @@ window.open(
 );
 
 
+
 }
+
+
 
 
 
@@ -1744,7 +1972,9 @@ document.getElementById("contactModal")
 
 
 
-// التعديل
+
+
+// طلب تعديل البيانات
 
 
 function openEditRequest(emp){
@@ -1757,15 +1987,21 @@ currentEmployee=emp;
 
 editName.value=emp.name;
 
+
 editPhone.value=emp.phone;
+
 
 editExtension.value=emp.extension;
 
+
 editLocation.value=emp.location;
+
 
 editDepartment.value=emp.department;
 
+
 editNotes.value="";
+
 
 
 
@@ -1778,6 +2014,9 @@ document.getElementById("editModal")
 
 
 
+
+
+
 function closeEditRequest(){
 
 
@@ -1786,6 +2025,7 @@ document.getElementById("editModal")
 
 
 }
+
 
 
 
@@ -1824,6 +2064,7 @@ ${new Date().toLocaleString("ar-JO")}
 
 
 
+
 window.open(
 
 "https://wa.me/"+adminWhatsApp+
@@ -1833,6 +2074,7 @@ window.open(
 );
 
 
+
 }
 
 
@@ -1841,17 +2083,27 @@ window.open(
 
 
 
-// الإضافة
+
+
+// طلب إضافة جهة اتصال
 
 
 function openAddRequest(){
+
+
+
+document.getElementById("serviceDropdown")
+.style.display="none";
+
 
 
 document.getElementById("addModal")
 .style.display="flex";
 
 
+
 }
+
 
 
 
@@ -1865,6 +2117,7 @@ document.getElementById("addModal")
 
 
 }
+
 
 
 
@@ -1889,6 +2142,7 @@ addDepartment.value.trim()=="" &&
 addNotes.value.trim()==""
 
 ){
+
 
 
 alert("لا يجوز إرسال بيانات فارغة عبر الواتساب");
@@ -1934,6 +2188,7 @@ ${new Date().toLocaleString("ar-JO")}
 
 
 
+
 window.open(
 
 "https://wa.me/"+adminWhatsApp+
@@ -1943,7 +2198,11 @@ window.open(
 );
 
 
+
 }
+
+
+
 
 
 
@@ -1956,7 +2215,9 @@ window.open(
 window.onload=function(){
 
 
+
 loadEmployees();
+
 
 
 };
