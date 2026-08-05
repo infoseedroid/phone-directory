@@ -29,7 +29,9 @@ font-family:'Cairo',sans-serif;
 }
 
 
+
 /* شاشة التحميل */
+
 
 #loadingScreen{
 
@@ -45,6 +47,7 @@ align-items:center;
 }
 
 
+
 #loadingScreen img{
 
 width:90px;
@@ -52,6 +55,7 @@ height:90px;
 object-fit:contain;
 
 }
+
 
 
 .spinner{
@@ -91,6 +95,48 @@ font-weight:bold;
 
 
 
+
+/* رسالة Popup */
+
+
+#popupMessage{
+
+display:none;
+
+position:fixed;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:#333;
+
+color:white;
+
+padding:15px 25px;
+
+border-radius:15px;
+
+font-size:16px;
+
+font-weight:bold;
+
+z-index:10000;
+
+box-shadow:0 5px 20px #0005;
+
+max-width:90%;
+
+text-align:center;
+
+}
+
+
+
+
+
 header{
 
 background:white;
@@ -101,6 +147,7 @@ font-size:21px;
 font-weight:bold;
 
 }
+
 
 
 
@@ -123,6 +170,8 @@ margin:auto;
 padding:12px;
 
 }
+
+
 
 
 
@@ -165,6 +214,7 @@ font-family:'Cairo',sans-serif;
 font-size:15px;
 
 }
+
 
 
 
@@ -241,11 +291,13 @@ color:#333;
 
 
 
+
 .service-dropdown button:hover{
 
 background:#f1f5f9;
 
 }
+
 
 
 
@@ -258,11 +310,13 @@ background:#2563eb;
 
 
 
+
 .clear-btn{
 
 background:#777;
 
 }
+
 
 
 
@@ -275,7 +329,6 @@ background:#0891b2;
 
 
 
-
 .counter{
 
 text-align:center;
@@ -283,6 +336,7 @@ font-weight:bold;
 padding:10px;
 
 }
+
 
 
 
@@ -303,14 +357,19 @@ box-shadow:0 3px 10px #0002;
 
 
 
+
 .container{
 
 padding:12px;
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
 gap:12px;
 
 }
+
 
 
 
@@ -329,6 +388,7 @@ position:relative;
 
 
 
+
 .card img{
 
 width:100px;
@@ -338,6 +398,7 @@ object-fit:cover;
 border:4px solid #1d4ed8;
 
 }
+
 
 
 
@@ -353,12 +414,14 @@ margin:8px;
 
 
 
+
 .info{
 
 line-height:2;
 color:#555;
 
 }
+
 
 
 
@@ -379,7 +442,9 @@ font-family:'Cairo',sans-serif;
 
 
 
-/* القوائم داخل الكروت */
+
+/* قائمة إجراءات الكارد */
+
 
 .card-menu{
 
@@ -402,7 +467,6 @@ height:35px;
 font-size:22px;
 
 }
-
 
 
 
@@ -438,6 +502,7 @@ text-align:right;
 
 
 /* النوافذ */
+
 
 .modal{
 
@@ -554,6 +619,12 @@ object-fit:cover;
 
 
 
+<div id="popupMessage"></div>
+
+
+
+
+
 <div id="loadingScreen">
 
 
@@ -572,8 +643,8 @@ object-fit:cover;
 </div>
 
 
-</div>
 
+</div>
 
 
 
@@ -603,7 +674,6 @@ object-fit:cover;
 
 
 
-
 <div class="controls">
 
 
@@ -611,8 +681,6 @@ object-fit:cover;
 
 
 <div class="main-buttons">
-
-
 
 
 
@@ -642,9 +710,11 @@ onclick="toggleServices()">
 <button onclick="openAddRequest()">
 
 
+
 <span>➕</span>
 
 <span>طلب إضافة جهة اتصال</span>
+
 
 
 </button>
@@ -657,12 +727,15 @@ onclick="toggleServices()">
 <button onclick="openEmployeeSearchEdit()">
 
 
+
 <span>✏️</span>
 
 <span>طلب تعديل بيانات</span>
 
 
+
 </button>
+
 
 
 
@@ -692,9 +765,8 @@ onclick="refreshData()">
 
 
 
-
-
 </div>
+
 
 
 
@@ -716,11 +788,13 @@ onchange="changePlaceholder()">
 
 
 
+
 <option value="department">
 
 المسمى الوظيفي
 
 </option>
+
 
 
 
@@ -732,11 +806,13 @@ onchange="changePlaceholder()">
 
 
 
+
 <option value="extension">
 
 الرقم الفرعي
 
 </option>
+
 
 
 
@@ -748,7 +824,9 @@ onchange="changePlaceholder()">
 
 
 
+
 </select>
+
 
 
 
@@ -759,7 +837,6 @@ onchange="changePlaceholder()">
 <input id="searchInput"
 placeholder="ابحث بالاسم..."
 onkeydown="if(event.key==='Enter')searchEmployee()">
-
 
 
 
@@ -787,6 +864,7 @@ onclick="searchEmployee()">
 
 
 
+
 <button class="clear-btn"
 onclick="clearSearch()">
 
@@ -800,11 +878,6 @@ onclick="clearSearch()">
 
 
 
-</div>
-
-
-
-
 
 </div>
 
@@ -813,8 +886,9 @@ onclick="clearSearch()">
 
 
 
+</div>
 
-<div id="messageBox" class="message-box"></div>
+
 
 
 
@@ -832,14 +906,20 @@ onclick="clearSearch()">
 
 
 
+<div id="messageBox" class="message-box"></div>
+
+
+
+
+
 
 <div class="container" id="cards">
+
 
 </div>
 
 
 <!-- نافذة طلب إضافة جهة اتصال -->
-
 
 <div class="modal" id="addModal">
 
@@ -855,29 +935,22 @@ onclick="clearSearch()">
 
 
 
-
 <input id="addEmployeeId" placeholder="الرقم الوظيفي">
-
 
 
 <input id="addName" placeholder="الاسم">
 
 
-
 <input id="addPhone" placeholder="رقم الهاتف">
-
 
 
 <input id="addExtension" placeholder="الرقم الفرعي">
 
 
-
 <input id="addLocation" placeholder="موقع العمل">
 
 
-
 <input id="addDepartment" placeholder="المسمى الوظيفي">
-
 
 
 <textarea id="addNotes" placeholder="ملاحظات"></textarea>
@@ -892,25 +965,16 @@ onclick="clearSearch()">
 <button class="send"
 onclick="sendAddRequest()">
 
-
-
 إرسال واتساب
 
-
-
 </button>
-
 
 
 
 <button class="close"
 onclick="closeAddRequest()">
 
-
-
 إغلاق
-
-
 
 </button>
 
@@ -929,7 +993,9 @@ onclick="closeAddRequest()">
 
 
 
-<!-- نافذة البحث بالرقم الوظيفي للتعديل -->
+
+
+<!-- نافذة البحث بالرقم الوظيفي -->
 
 
 <div class="modal" id="employeeSearchModal">
@@ -960,37 +1026,31 @@ placeholder="أدخل الرقم الوظيفي">
 <button class="send"
 onclick="findEmployeeById()">
 
-
-
 بحث
 
-
-
 </button>
-
 
 
 
 <button class="close"
 onclick="closeEmployeeSearch()">
 
-
-
 إغلاق
-
-
 
 </button>
 
 
-</div>
-
-
 
 </div>
 
 
+
 </div>
+
+
+</div>
+
+
 
 
 
@@ -1018,28 +1078,23 @@ onclick="closeEmployeeSearch()">
 <input id="editEmployeeId" readonly>
 
 
-
 <input id="editName" readonly>
-
 
 
 <input id="editPhone" placeholder="رقم الهاتف الجديد">
 
 
-
 <input id="editExtension" placeholder="الرقم الفرعي الجديد">
-
 
 
 <input id="editLocation" placeholder="موقع العمل الجديد">
 
 
-
 <input id="editDepartment" placeholder="المسمى الوظيفي الجديد">
 
 
-
 <textarea id="editNotes" placeholder="ملاحظات"></textarea>
+
 
 
 
@@ -1051,11 +1106,7 @@ onclick="closeEmployeeSearch()">
 <button class="send"
 onclick="sendEditRequest()">
 
-
-
 إرسال واتساب
-
-
 
 </button>
 
@@ -1065,11 +1116,7 @@ onclick="sendEditRequest()">
 <button class="close"
 onclick="closeEditRequest()">
 
-
-
 إغلاق
-
-
 
 </button>
 
@@ -1106,7 +1153,6 @@ onclick="closeEditRequest()">
 
 
 
-
 <div class="modal-title" id="contactName"></div>
 
 
@@ -1117,14 +1163,11 @@ onclick="closeEditRequest()">
 <div class="modal-buttons">
 
 
+
 <button class="call"
 onclick="makeCall()">
 
-
-
 ☎ اتصال
-
-
 
 </button>
 
@@ -1135,13 +1178,10 @@ onclick="makeCall()">
 <button class="whatsapp"
 onclick="openWhatsApp()">
 
-
-
 💬 واتساب
 
-
-
 </button>
+
 
 
 
@@ -1155,24 +1195,23 @@ onclick="openWhatsApp()">
 
 
 
+
 <button class="close"
 style="width:100%;padding:12px;border:none;border-radius:12px;color:white;font-family:'Cairo'"
 onclick="closeContact()">
 
-
-
 إغلاق
-
-
 
 </button>
 
 
 
+
 </div>
 
 
 </div>
+
 
 
 
@@ -1212,28 +1251,33 @@ const sheetURL =
 
 
 
-function showMessage(text){
+// رسالة Popup
 
 
-let box=document.getElementById("messageBox");
+function showPopup(message){
 
 
-box.innerHTML=text;
+let popup=document.getElementById("popupMessage");
 
 
-box.style.display="block";
+popup.innerHTML=message;
+
+
+popup.style.display="block";
+
 
 
 setTimeout(()=>{
 
 
-box.style.display="none";
+popup.style.display="none";
 
 
-},4000);
+},3000);
 
 
 }
+
 
 
 
@@ -1333,7 +1377,7 @@ catch(e){
 hideLoading();
 
 
-showMessage("⚠️ تعذر الاتصال ببيانات دليل الهاتف");
+showPopup("⚠️ تعذر الاتصال ببيانات دليل الهاتف");
 
 
 }
@@ -1341,6 +1385,9 @@ showMessage("⚠️ تعذر الاتصال ببيانات دليل الهاتف
 
 
 }
+
+
+
 
 
 
@@ -1353,8 +1400,6 @@ document.getElementById("loadingScreen")
 
 
 }
-
-
 
 function refreshData(){
 
@@ -1371,7 +1416,6 @@ loadEmployees();
 
 
 }
-
 
 
 
@@ -1422,7 +1466,7 @@ counter.innerHTML="عدد الموظفين: "+list.length;
 if(list.length===0){
 
 
-showMessage("❌ لا توجد نتائج");
+showPopup("❌ لا توجد نتائج");
 
 
 return;
@@ -1456,7 +1500,6 @@ onclick="toggleCardMenu(this)">
 ⋮
 
 </button>
-
 
 
 
@@ -1513,13 +1556,16 @@ ${escapeHTML(emp.name)}
 
 <br>
 
+
 📍 ${escapeHTML(emp.location)}
 
 <br>
 
+
 🏢 ${escapeHTML(emp.department)}
 
 <br>
+
 
 ☎ ${escapeHTML(emp.extension)}
 
@@ -1564,8 +1610,6 @@ box.innerHTML=html;
 
 
 
-
-
 function searchEmployee(){
 
 
@@ -1582,9 +1626,11 @@ let type=searchType.value;
 let result=employees.filter(e=>
 
 
+
 (e[type]||"")
 .toLowerCase()
 .includes(text)
+
 
 
 );
@@ -1618,10 +1664,12 @@ displayEmployees(employees);
 
 
 
+
 function changePlaceholder(){
 
 
 let p={
+
 
 name:"ابحث بالاسم...",
 
@@ -1637,7 +1685,9 @@ extension:"أدخل الرقم الفرعي...",
 
 phone:"أدخل رقم الهاتف..."
 
+
 };
+
 
 
 searchInput.placeholder=p[searchType.value];
@@ -1683,11 +1733,7 @@ let menu=btn.nextElementSibling;
 
 
 document.querySelectorAll(".card-actions")
-.forEach(x=>{
-
-x.style.display="none";
-
-});
+.forEach(x=>x.style.display="none");
 
 
 
@@ -1695,7 +1741,6 @@ menu.style.display="block";
 
 
 }
-
 
 
 
@@ -1737,7 +1782,7 @@ document.getElementById("serviceDropdown")
 
 
 
-// طلب تعديل بالرقم الوظيفي
+// تعديل بالرقم الوظيفي
 
 
 function openEmployeeSearchEdit(){
@@ -1780,7 +1825,7 @@ let id=employeeIdSearch.value.trim();
 if(id===""){
 
 
-showMessage("⚠️ أدخل الرقم الوظيفي");
+showPopup("⚠️ أدخل الرقم الوظيفي");
 
 
 return;
@@ -1797,7 +1842,7 @@ let emp=employees.find(e=>e.employeeId===id);
 if(!emp){
 
 
-showMessage("❌ لم يتم العثور على الموظف");
+showPopup("❌ لم يتم العثور على الموظف");
 
 
 return;
@@ -1823,8 +1868,8 @@ openEditRequest(emp);
 function openEditRequest(emp){
 
 
-
 currentEmployee=emp;
+
 
 
 editEmployeeId.value=emp.employeeId;
@@ -1857,6 +1902,7 @@ editModal.style.display="flex";
 
 
 
+
 function closeEditRequest(){
 
 
@@ -1864,7 +1910,6 @@ editModal.style.display="none";
 
 
 }
-
 
 
 
@@ -1914,6 +1959,10 @@ window.open(
 );
 
 
+
+closeEditRequest();
+
+
 }
 
 
@@ -1924,7 +1973,7 @@ window.open(
 
 
 
-// الاتصال والواتساب
+// الاتصال
 
 
 function showContact(emp){
@@ -1955,6 +2004,7 @@ contactModal.style.display="flex";
 
 
 
+
 function makeCall(){
 
 
@@ -1962,7 +2012,6 @@ window.location.href="tel:"+selectedPhone;
 
 
 }
-
 
 
 
@@ -1999,6 +2048,8 @@ window.open(
 
 
 }
+
+
 
 
 
@@ -2049,6 +2100,35 @@ addModal.style.display="none";
 
 
 
+function clearAddForm(){
+
+
+addEmployeeId.value="";
+
+
+addName.value="";
+
+
+addPhone.value="";
+
+
+addExtension.value="";
+
+
+addLocation.value="";
+
+
+addDepartment.value="";
+
+
+addNotes.value="";
+
+
+}
+
+
+
+
 
 
 function sendAddRequest(){
@@ -2074,9 +2154,7 @@ addNotes.value.trim()===""
 ){
 
 
-showMessage(
-"⚠️ لا يمكن إرسال طلب إضافة فارغ"
-);
+showPopup("⚠️ لا يمكن إرسال طلب إضافة فارغ");
 
 
 return;
@@ -2088,52 +2166,35 @@ return;
 
 
 
-
 let msg=`
 
 طلب إضافة جهة اتصال جديدة
 
-
 الرقم الوظيفي:
 ${addEmployeeId.value}
-
-
 
 الاسم:
 ${addName.value}
 
-
-
 رقم الهاتف:
 ${addPhone.value}
-
-
 
 الرقم الفرعي:
 ${addExtension.value}
 
-
-
 موقع العمل:
 ${addLocation.value}
-
-
 
 المسمى الوظيفي:
 ${addDepartment.value}
 
-
-
 ملاحظات:
 ${addNotes.value}
-
-
 
 التاريخ:
 ${new Date().toLocaleString("ar-JO")}
 
 `;
-
 
 
 
@@ -2149,8 +2210,14 @@ window.open(
 
 
 
-}
+closeAddRequest();
 
+
+clearAddForm();
+
+
+
+}
 
 
 
